@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorry Snigdha ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    background:linear-gradient(135deg,#ff758c,#ff7eb3);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+/* Floating Hearts */
+.heart-float{
+    position:absolute;
+    bottom:-40px;
+    font-size:18px;
+    animation:floatUp 6s linear infinite;
+    opacity:0.7;
+}
+
+@keyframes floatUp{
+    0%{transform:translateY(0) scale(1);opacity:1;}
+    100%{transform:translateY(-110vh) scale(1.8);opacity:0;}
+}
+
+/* Container */
+.container{
+    width:90%;
+    max-width:420px;
+    background:rgba(255,255,255,0.18);
+    backdrop-filter:blur(18px);
+    border-radius:25px;
+    padding:35px 25px;
+    text-align:center;
+    z-index:2;
+    animation:fadeIn 1.2s ease;
+}
+
+.step{
+    display:none;
+    animation:slideUp 0.9s ease;
+}
+
+.step.active{
+    display:block;
+}
+
+h1{
+    color:#fff;
+    margin-bottom:15px;
+    font-size:25px;
+}
+
+p{
+    color:#fff;
+    font-size:14.5px;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+button{
+    background:#fff;
+    border:none;
+    padding:12px 26px;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.07);
+    background:#ffe6ec;
+}
+
+.heart{
+    font-size:55px;
+    animation:beat 1.3s infinite;
+    margin-bottom:20px;
+}
+
+/* Yes No buttons */
+.choice{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+.no{
+    position:relative;
+}
+
+/* Popup */
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.4);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:10;
+}
+
+.popup-box{
+    background:#fff;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    animation:slideUp 0.5s ease;
+}
+
+.popup-box p{
+    color:#333;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+/* Heartbeat Love Line */
+.love-line{
+    display:inline-block;
+    font-size:18px;
+    font-weight:600;
+    color:#fff;
+    animation:heartbeat 1.4s infinite, glow 1.4s infinite alternate;
+}
+
+/* Animations */
+@keyframes fadeIn{
+    from{opacity:0}
+    to{opacity:1}
+}
+
+@keyframes slideUp{
+    from{transform:translateY(35px);opacity:0}
+    to{transform:translateY(0);opacity:1}
+}
+
+@keyframes beat{
+    0%,100%{transform:scale(1)}
+    50%{transform:scale(1.35)}
+}
+
+@keyframes heartbeat{
+    0%{transform:scale(1)}
+    25%{transform:scale(1.15)}
+    40%{transform:scale(1)}
+    60%{transform:scale(1.15)}
+    100%{transform:scale(1)}
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 5px #fff;}
+    to{text-shadow:0 0 15px #ffdde1, 0 0 25px #ff758c;}
+}
+
+/* Mobile Optimization */
+@media(max-width:480px){
+    h1{font-size:23px}
+    p{font-size:14px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<script>
+for(let i=0;i<25;i++){
+    let h=document.createElement("div");
+    h.className="heart-float";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=4+Math.random()*4+"s";
+    h.style.fontSize=16+Math.random()*20+"px";
+    document.body.appendChild(h);
+}
+</script>
+
+<div class="container">
+
+    <div class="step active">
+        <div class="heart">❤️</div>
+        <h1>Hey Snigdha…</h1>
+        <p>This isn’t just a website.<br>It’s my heart speaking to yours.</p>
+        <button onclick="nextStep()">Continue</button>
+    </div>
+
+    <div class="step">
+        <h1>I Know I Hurt You</h1>
+        <p>And that hurts me even more.<br>You never deserved that.</p>
+        <button onclick="nextStep()">Next</button>
+    </div>
+
+    <div class="step">
+        <h1>You Matter ❤️</h1>
+        <p>Your smile is my calm.<br>Your silence scares me the most.</p>
+        <button onclick="nextStep()">Next</button>
+    </div>
+
+    <div class="step">
+        <h1>I’m Sorry</h1>
+        <p>For every misunderstanding,<br>for every moment I failed you.</p>
+        <button onclick="nextStep()">Next</button>
+    </div>
+
+    <div class="step">
+        <h1>One Last Question 💭</h1>
+        <p>Will you forgive me and give us another chance?</p>
+        <div class="choice">
+            <button onclick="nextStep()">Yes ❤️</button>
+            <button class="no" onclick="handleNo(this)">No 😶</button>
+        </div>
+    </div>
+
+    <div class="step">
+        <div class="heart">💖</div>
+        <h1>Snigdha 🌸</h1>
+        <p>
+        I don’t promise perfection.<br>
+        I promise effort, honesty, and love.<br><br>
+
+        I promise to listen,<br>
+        to understand,<br>
+        and to choose you — every single day.<br><br>
+
+        I’m sorry.<br>
+        And I’m not going anywhere.<br><br>
+
+        <span class="love-line">
+        I love you, Snigdha ❤️
+        </span>
+        </p>
+    </div>
+
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup">
+    <div class="popup-box">
+        <p>😌 You can’t say no to your love.<br>It’s already a YES ❤️</p>
+        <button onclick="acceptYes()">Okay 💖</button>
+    </div>
+</div>
+
+<script>
+let current = 0;
+let noCount = 0;
+const steps = document.querySelectorAll('.step');
+const popup = document.getElementById("popup");
+
+function nextStep(){
+    steps[current].classList.remove('active');
+    current++;
+    if(current < steps.length){
+        steps[current].classList.add('active');
+    }
+}
+
+function handleNo(btn){
+    noCount++;
+    btn.style.transform=`translate(${Math.random()*120-60}px,${Math.random()*80-40}px)`;
+    if(noCount >= 3){
+        popup.style.display="flex";
+    }
+}
+
+
+function acceptYes(){
+    popup.style.display="none";
+    nextStep();
+}
+</script>
+
+</body>
+</html>
