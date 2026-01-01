@@ -130,7 +130,7 @@ button:hover{
     margin-bottom:15px;
 }
 
-/* Heartbeat Love Line */
+/* Love line (simple highlight) */
 .love-line{
     display:inline-block;
     font-size:18px;
@@ -153,19 +153,6 @@ button:hover{
 @keyframes beat{
     0%,100%{transform:scale(1)}
     50%{transform:scale(1.35)}
-}
-
-@keyframes heartbeat{
-    0%{transform:scale(1)}
-    25%{transform:scale(1.15)}
-    40%{transform:scale(1)}
-    60%{transform:scale(1.15)}
-    100%{transform:scale(1)}
-}
-
-@keyframes glow{
-    from{text-shadow:0 0 5px #fff;}
-    to{text-shadow:0 0 15px #ffdde1, 0 0 25px #ff758c;}
 }
 
 /* Mobile Optimization */
@@ -202,29 +189,40 @@ for(let i=0;i<25;i++){
 
     <div class="step">
         <h1>I Know I Hurt You</h1>
-        <p>I messed up somewhere.<br>And that hurts me even more.<br>You never deserved that.</p>
+        <p>
+            I messed up somewhere.<br>
+            And that hurts me even more.<br>
+            You never deserved that.
+        </p>
         <button onclick="nextStep()">Next</button>
     </div>
 
     <div class="step">
-        <h1>You Matter ❤️</h1>
-        <p>Your smile is my calm.<br>Your silence scares me the most.</p>
+        <h1>You Are Important ❤️</h1>
+        <p>
+            Your smile brings me peace.<br>
+            Your silence makes me realize how much you matter.
+        </p>
         <button onclick="nextStep()">Next</button>
     </div>
 
-        <div class="step">
-        <h1>You Mean Everything ❤️</h1>
+    <div class="step">
+        <h1>You Are My World 💖</h1>
         <p>
-        Your smile is my peace.<br>
-        Your tears are my biggest fear.<br>
-        Losing you is my worst nightmare.
+            Your happiness is my strength.<br>
+            Your pain stays with me.<br>
+            The thought of losing you scares me the most.
         </p>
         <button onclick="nextStep()">Next</button>
     </div>
 
     <div class="step">
         <h1>I’m Sorry</h1>
-        <p><br>for every moment I didn’t understand you.<br>For every misunderstanding,<br>for every moment I failed you.</p>
+        <p>
+            For every misunderstanding,<br>
+            for every moment I didn’t understand you,<br>
+            for every moment I failed you.
+        </p>
         <button onclick="nextStep()">Next</button>
     </div>
 
@@ -240,19 +238,19 @@ for(let i=0;i<25;i++){
     <div class="step">
         <div class="heart">💖</div>
         <p>
-        I don’t promise perfection.<br>
-        I promise effort, honesty, and love.<br><br>
+            I don’t promise perfection.<br>
+            I promise effort, honesty, and love.<br><br>
 
-        I promise to listen,<br>
-        to understand,<br>
-        and to choose you — every single day.<br><br>
+            I promise to listen,<br>
+            to understand,<br>
+            and to choose you — every single day.<br><br>
 
-        I’m sorry.<br>
-        And I’m not going anywhere.<br><br>
+            I’m sorry.<br>
+            And I’m not going anywhere.<br><br>
 
-        <span class="love-line">
-        I love you, Snigdha ❤️
-        </span>
+            <span class="love-line">
+                I love you, Snigdha ❤️
+            </span>
         </p>
     </div>
 
@@ -282,15 +280,15 @@ function nextStep(){
 
 function handleNo(btn){
     noCount++;
-    btn.style.transform=`translate(${Math.random()*120-60}px,${Math.random()*80-40}px)`;
+    btn.style.transform =
+        `translate(${Math.random()*120-60}px, ${Math.random()*80-40}px)`;
     if(noCount >= 3){
-        popup.style.display="flex";
+        popup.style.display = "flex";
     }
 }
 
-
 function acceptYes(){
-    popup.style.display="none";
+    popup.style.display = "none";
     nextStep();
 }
 </script>
